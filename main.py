@@ -37,17 +37,17 @@ def group_reply_text(msg):
         content = msg['Content']
     elif msg['Type'] == SHARING:
         content = msg['Text']
+    username = ''
 
     # 发送者的昵称
     if 'ActualNickName' in msg:
         username = msg['ActualNickName']
-        print(username + ":" + content)
-        if username == "Alan.Yeung":
-            sentChatRoomsMsg(u'得嗲噶', 'alen 哥牛逼')
-        elif username == u'崔智理' or username == u'幻影zL' or username == u'Cui智理':
+        # if username == "Alan.Yeung":
+        #     sentChatRoomsMsg(u'得嗲噶', 'alen 哥牛逼')
+        if username == u'崔智理' or username == u'幻影zL' or username == u'Cui智理':
             sentChatRoomsMsg(u'得嗲噶', '智理总有钱仔')
             # sentChatRoomsMsg(u'得嗲噶', 'test msg')
-
+    print(username + ":" + content)
 
 # @itchat.msg_register(itchat.content.TEXT)
 # def text_reply(msg):
@@ -64,7 +64,7 @@ def group_reply_text(msg):
 # itchat.send('Hello, filehelper', toUserName='filehelper')
 itchat.auto_login(hotReload=True)
 # itchat.send_image("C:/Users/faith/Desktop/wechatPersonal/img/a.jpg", 'filehelper')
-# while True:
-#     sentChatRoomsMsg(u'得嗲噶', '智理总有钱仔')
+while True:
+    sentChatRoomsMsg(u'得嗲噶', '智理总有钱仔')
 
 itchat.run()
